@@ -1,0 +1,84 @@
+
+\documentclass[12pt]{article}
+
+%% Define some new colors
+\usepackage{xcolor}
+
+\usepackage{scrextend}
+
+
+%% Page and text formatting
+\usepackage[left=1.0in, right=1.0in, top=1.0in, bottom=1.0in]{geometry} % margins
+\usepackage{setspace}
+\singlespacing % No more than 6 lines of text per inch
+\usepackage{amsmath, amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{graphics}
+\usepackage{makecell}
+\usepackage{tabularx}
+
+
+%% Set up hyperlinks
+\usepackage[linktoc=page]{hyperref}
+\hypersetup{
+  colorlinks = true,
+  urlcolor = blue,
+  citecolor = blue,
+  linkcolor = blue,
+}
+
+%% Reduce whitespace around lists (globally)
+\usepackage{enumitem}
+\setlist[itemize]{nosep,left=0pt}
+\setlist[enumerate]{nosep}
+\setlist[description]{nosep}
+
+%% Formatting for sections
+
+\usepackage{sectsty}
+\sectionfont{\fontsize{22}{25}\selectfont}
+\subsectionfont{\fontsize{15}{25}\selectfont}
+
+
+
+\begin{document}
+
+\fontsize{10}{12}\selectfont
+
+\linespread{1.3}
+\fontfamily{ptm}\selectfont
+
+\vspace{2mm}
+
+\vspace{1mm}
+
+\noindent{\fontsize{15}{17}\selectfont Kevin Nash \\ }
+
+\noindent\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l l}
+Research Associate & Email: \href{mailto:knash@physics.rutgers.edu}{knash@physics.rutgers.edu} \\
+Rutgers University & Phone: (434) 760-1424\\
+Department of Physics \& Astronomy \\
+136 Frelinghuysen Rd\\
+Piscataway, NJ 08854\\
+\hline
+\\
+\\
+\end{tabular*}
+
+\noindent Dear members of the search committee, \\
+
+I would like to apply for the machine learning scientist position at SLAC.
+I have submitted my curriculum vitae, along with my research proposal for your consideration.
+
+My research expertise lies in Beyond the Standard Model searches involving boosted
+heavy resonances at CMS, and also in the development and integration of new algorithms
+for the selection of these objects. Recently, I have been working on the design, validation,
+and analysis implementation of cutting edge convolutional neural network tagging algorithms.
+I have also been heavily involved in the CMS outer tracker hardware project for the HL-LHC upgrade,
+specifically in characterizing the next generation of silicon tracking modules.
+These and other contributions are detailed further in the attached research proposal.
+Please feel free to contact me with any question that you may have, and thank you
+for considering my application.
+
+\end{document}

@@ -134,10 +134,10 @@ methods, so I then expanded to include additional physics objects ($\mathrm{imag
 moved to the physics analysis implementation.  I designed a data-driven background estimate
 that is capable of predicting a generic final state to create an ``analysis factory'',
 which takes advantage of the kinematic decorrelation of the $\mathrm{imageX_{MD}}$ network.  In order
-to commission the $\mathrm{imageTop_{MD}}$ tagger and analysis factory, I first start by rebooting
-the $\mathrm{W' \to qQ \to tHb}$ search.
-
-We are investigating the sensitivity of the ImageMD network when applied to several
+to commission the $\mathrm{imageTop_{MD}}$ tagger and analysis factory, I rebooted
+the $\mathrm{W' \to qQ \to tHb}$ search using now the full CMS run 2 data. This analysis
+is now post-approval, and the next steps will involve multiple extensions of the tagger and
+analysis methods.  We are investigating the sensitivity of the ImageMD network when applied to several
 exotic jet signatures.  In the case of a boosted resonance decaying to two bosons (For example a WED-motivated light radion),
 we expect a merged diboson jet (for example $\mathrm{WW \to qqqq}$ or $\mathrm{Z\gamma \to qq\gamma}$ within a single jet).
 In the WW case, we expect a dedicated neural network training to give a substantial improvement in
@@ -165,10 +165,7 @@ which can be used to create BSM jet analogues in CMS data.  Although the network
 very sensitive in the current form, we are additionally looking toward future improvements.
 Potentially $\mathrm{image_{MD}}$ network can be improved by expanding the pf candidate inputs to
 instead include lower-level detector subsystems, and by converting the pixelized inputs
-to particle-based inputs (a GCNN for example).  Additionally, a direct implementation
-of the network is as input into an autoencoder for anomaly detection.  We have already
-demonstrated the possibility of using this network, and are investigating additional
-architecture improvements.  With my technical experience from implementing the
+to particle-based inputs (a GCNN for example).  With my technical experience from implementing the
 $\mathrm{image_{MD}}$ network, and leadership experience from my
 B2G:RES and JMAR subgroup convenerships, position to play a leading role in the
 field of hadronic searches, which will carry into the HL-LHC era.
@@ -226,23 +223,16 @@ establishing further hardware contributions.
  The CMS Collaboration, \textbf{CMS Physics Analysis Summry}, \href{http://cms-physics.web.cern.ch/cms-physics/public/JME-13-007-pas.pdf}{{\color{blue}\underline{CMS PAS JME-13-007}}}, 2014
 
 
- \bibitem{Khachatryan:2015mta}
-\textit{Search for the production of an excited bottom quark decaying to $\mathrm{tW}$ in proton-proton collisions at $ \sqrt{s}=8 $ TeV},\\
+ \bibitem{Khachatryan:2015mta} textit{Search for the production of an excited bottom quark decaying to $\mathrm{tW}$ in proton-proton collisions at $ \sqrt{s}=8 $ TeV},\\
 The CMS Collaboration, \textbf{JHEP}, \doi{10.1007/JHEP01(2016)166}, 2016
 
 
 
- \bibitem{Sirunyan:2018fki}
-\textit{Search for a $\mathrm{W'}$ boson decaying to a vector-like quark and a top or bottom quark in the all-jets final state},\\
+ \bibitem{Sirunyan:2018fki} \textit{Search for a $\mathrm{W'}$ boson decaying to a vector-like quark and a top or bottom quark in the all-jets final state},\\
 The CMS Collaboration, \textbf{JHEP}, \doi{10.1007/JHEP03(2019)127}, 2019
 
  \bibitem{Kasieczka:2017nvn} \textit{Deep-learning Top Taggers or The End of QCD?},\\
  Kasieczka, Plehn et al, \textbf{JHEP}, \doi{10.1007/JHEP05(2017)006}, 2017
-
-
- \bibitem{Dobrescu:2015yba} \textit{Heavy Higgs bosons and the 2 TeV $\mathrm{W'}$ boson},\\
- Dobrescu, Bogdan A. and Liu, Zhen, \textbf{JHEP}, \doi{10.1007/JHEP10(2015)118}, 2015
-
 
  \bibitem{Macaluso:2018tck} \textit{Pulling Out All the Tops with Computer Vision and Deep Learning},\\
  Macaluso, Sebastian and Shih, David, \textbf{JHEP}, \doi{10.1007/JHEP10(2018)121}, 2018
@@ -250,6 +240,10 @@ The CMS Collaboration, \textbf{JHEP}, \doi{10.1007/JHEP03(2019)127}, 2019
 
  \bibitem{CMS:2019gpd} \textit{Identification of heavy, energetic, hadronically decaying particles using machine-learning techniques},\\
  The CMS Collaboration, \textbf{JINST}, \doi{10.1088/1748-0221/15/06/P06005}, 2020
+
+
+  \bibitem{Dobrescu:2015yba} \textit{Heavy Higgs bosons and the 2 TeV $\mathrm{W'}$ boson},\\
+  Dobrescu, Bogdan A. and Liu, Zhen, \textbf{JHEP}, \doi{10.1007/JHEP10(2015)118}, 2015
 
 \end{thebibliography}
 \end{flushleft}

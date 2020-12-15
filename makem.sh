@@ -8,3 +8,6 @@ pdflatex TS2020
 pdflatex DS2020
 pdflatex CV2020
 pdflatex PL2020
+pdflatex CLBRAND2020.tex
+pdflatex CLSLAC2020.tex
+pdflatex CLTXAM2020.tex
