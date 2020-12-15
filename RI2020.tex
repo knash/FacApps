@@ -1,0 +1,260 @@
+
+\documentclass[12pt]{article}
+%\usepackage[
+%backend=bibtex,
+%citestyle=ieee
+%]{biblatex}
+%\addbibresource{RI2020.bib}
+%\renewbibmacro{in:}{}
+%% Define some new colors
+\usepackage{xcolor}
+
+\usepackage{scrextend}
+
+
+%% Page and text formatting
+\usepackage[left=1.0in, right=1.0in, top=1.0in, bottom=1.0in]{geometry} % margins
+\usepackage{setspace}
+\singlespacing % No more than 6 lines of text per inch
+\usepackage{amsmath, amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{graphics}
+\usepackage{makecell}
+\usepackage{tabularx}
+\usepackage{indentfirst}
+\usepackage[normalem]{ulem}
+%% Set up hyperlinks
+\usepackage[linktoc=page]{hyperref}
+\hypersetup{
+  colorlinks = true,
+  urlcolor = blue,
+  citecolor = blue,
+  linkcolor = blue,
+}
+\usepackage{doi}
+
+%% Reduce whitespace around lists (globally)
+\usepackage{enumitem}
+\setlist[itemize]{nosep,left=0pt}
+\setlist[enumerate]{nosep}
+\setlist[description]{nosep}
+
+%% Formatting for sections
+
+\usepackage{sectsty}
+\sectionfont{\fontsize{22}{25}\selectfont}
+\subsectionfont{\fontsize{15}{25}\selectfont}
+
+
+
+
+\begin{document}
+
+\fontsize{10}{12}\selectfont
+
+\linespread{1.3}
+\fontfamily{ptm}\selectfont
+
+\vspace{2mm}
+
+\vspace{1mm}
+
+\noindent{\fontsize{15}{17}\selectfont Kevin Nash \\ }
+
+\noindent\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l l}
+Research Associate & Email: \href{mailto:knash@physics.rutgers.edu}{knash@physics.rutgers.edu} \\
+Rutgers University & Phone: (434) 760-1424\\
+Department of Physics \& Astronomy \\
+136 Frelinghuysen Rd\\
+Piscataway, NJ 08854\\
+\hline
+\\
+\\
+\end{tabular*}
+
+
+
+
+\section*{Research Statement}
+
+
+The standard model of particle physics has been an extremely successful tool,
+but we know that it remains incomplete.  If new physics is discoverable at the LHC,
+then we will need to use the most sensitive tools and combine measurements from
+as many signatures as possible to find it.  Possibly the most room for improvement
+can be gained from searches in the
+all hadronic final state due to the difficulty in reducing the QCD multijet
+background.  These searches can greatly benefit from cutting-edge
+selection techniques, and of these, perhaps the most exciting is the tagging
+of merged heavy resonances.  Merged heavy resonances arise in BSM physics
+searches for massive gauge bosons, heavy quark partners, SUSY partners,
+Kaluza-Klein excitations, and others.  Classically, analyses that identify
+hadronic signatures (for example from a top decay) would not be as sensitive
+as the leptonic decay mode, due to the extremely difficult problem of reducing
+the hadronic backgrounds.
+
+A boosted heavy resonance decay can be reconstructed as a single wide jet with
+a characteristic substructure, and heavy resonance tagging techniques use this
+substructure to reduce the hadronic background.  Generally, tagging techniques
+discriminate boosted resonances using analytical variables such as the ``groomed''
+mass of the jet which selects a jet mass consistent with the progenitor particle,
+a shape criterion that selects an energy deposition pattern consistent with the
+number or expected cores, and a selection of the heavy flavor content within the
+jet.  These methods have had much success, but recent developments in machine-learned pattern recognition improve the sensitivity far beyond what is achieved
+by analytical variable selections.  First, I will discuss my historical contributions to
+merged jet tagging, then my work in porting convolutional neural network
+(CNN) image recognition to jet tagging and the rich
+physics analysis program that these methods make possible, and finally my role in
+the outer tracker hardware program in preparation of the HL-LHC upgrade.
+
+My introduction to LHC physics research was the application of the first tagging techniques
+for merged top jets.  I applied the methods that were pioneered in the $\mathrm{Z' \to t\overline{t}}$
+all hadronic
+search \cite{Chatrchyan:2013lca}, to the $\mathrm{W' \to t\overline{b}}$ search
+\cite{Khachatryan:2015edz} (see also the run 2 reboot in Ref.~\cite{Sirunyan:2017ukk}).
+I was the first to use the N-subjettiness and subjet b-tagging algoritms for top-jet identification, which
+proved to be much more effective in reducing the
+QCD-multijet background than the methods used previously.
+I extracted the scale factor for this new top tagger by studying a highly
+pure sample of semileptonic $\mathrm{t\overline{t}}$ (leading to the JME-13-007 \cite{CMS:2014fya} analysis).
+ I then applied this new top tagging method to the hadronic $\mathrm{b^* \to tW}$
+ search \cite{Khachatryan:2015mta}, and then additionally to
+the $\mathrm{W' \to qQ \to tHb}$ search \cite{Sirunyan:2018fki}.  Motivated by extensive
+studies in the theoretical community \cite{Kasieczka:2017nvn,Macaluso:2018tck}, I
+employed the latest advances in machine learning to produce a
+CNN tagger for CMS, ``$\mathrm{imageTop}$''.  The improvements that I made on top of the previous
+CNN studies include an adaptive zoom, particle flow identification ``colors'', flavor
+discrimination, and mass decorrelation.  This tagger debuted in Ref.~\cite{CMS:2019gpd},
+and shows an improvement of nearly a {\bf factor of ten} in background rejection compared to the standard
+CMS top-tagger, and is the most sensitive mass decorrelated tagger in CMS.
+
+The $\mathrm{imageTop_{MD}}$ network offers a substantial improvement over other tagging
+methods, so I then expanded to include additional physics objects ($\mathrm{imageX_{MD}}$) and
+moved to the physics analysis implementation.  I designed a data-driven background estimate
+that is capable of predicting a generic final state to create an ``analysis factory'',
+which takes advantage of the kinematic decorrelation of the $\mathrm{imageX_{MD}}$ network.  In order
+to commission the $\mathrm{imageTop_{MD}}$ tagger and analysis factory, I first start by rebooting
+the $\mathrm{W' \to qQ \to tHb}$ search.
+
+We are investigating the sensitivity of the ImageMD network when applied to several
+exotic jet signatures.  In the case of a boosted resonance decaying to two bosons (For example a WED-motivated light radion),
+we expect a merged diboson jet (for example $\mathrm{WW \to qqqq}$ or $\mathrm{Z\gamma \to qq\gamma}$ within a single jet).
+In the WW case, we expect a dedicated neural network training to give a substantial improvement in
+such a feature-dense jet, and in the $\mathrm{Z\gamma}$ case, we expect the photon and neutral pf
+candidate colors to improve signal efficiency in the case of a non-isolated
+photon.  Additionally, there is room to expand the aforementioned
+$\mathrm{W' \to qQ \to tHb}$ search in interesting ways.  The same final state here is
+reproduced by the $\mathrm{W' \to HH^{\pm} \to tHb}$ signature \cite{Dobrescu:2015yba}.
+However, here there is the possibility of a boosted $\mathrm{H^{\pm}}$ which would produce a
+merged top jet with an additional hard b quark.
+Also, the same theoretical framework allows for a robust set of analyses the
+analysis with the inclusion of the additional $\mathrm{W'}$ decays
+$\mathrm{W' \to H^{0}H^{\pm} \to tttb}$ or $\mathrm{tbbb}$, which would similarly cover an element of phase space
+that necessitates a dedicated boosted bb or tt jet tagger.
+These additional merged jets are prime candidates for the $\mathrm{imageX_{MD}}$
+network.  In preliminary studies, the exotic taggers show a large improvement over the
+conventional methods, and the analysis factory produces an impressive background
+closure with only minor tweaking.
+
+The main challenge in producing BSM taggers is the data validation, given that there
+is usually no acceptable SM analogue, and a machine-learned tagger necessitates a
+high level of confidence, given the lack of physical intuition of the learned features.
+Therefore, I am investigating methods of validation through event superposition
+which can be used to create BSM jet analogues in CMS data.  Although the network is
+very sensitive in the current form, we are additionally looking toward future improvements.
+Potentially $\mathrm{image_{MD}}$ network can be improved by expanding the pf candidate inputs to
+instead include lower-level detector subsystems, and by converting the pixelized inputs
+to particle-based inputs (a GCNN for example).  Additionally, a direct implementation
+of the network is as input into an autoencoder for anomaly detection.  We have already
+demonstrated the possibility of using this network, and are investigating additional
+architecture improvements.  With my technical experience from implementing the
+$\mathrm{image_{MD}}$ network, and leadership experience from my
+B2G:RES and JMAR subgroup convenerships, position to play a leading role in the
+field of hadronic searches, which will carry into the HL-LHC era.
+
+Although these dedicated methods are
+extremely powerful, the network can also be used in a generic way.
+We are currently investigating the application of the network as an unsupervised
+anomaly detector through the porting of the architecture to an autoencoder.
+With this network, an anomaly would show up as a poorly reconstructed jet image.
+Additionally, the anomaly detection performance is bolstered by a careful determination of the latent space pdf by using autoregressive flows.
+The anomaly is then detected as an unlikely latent space configuration.
+
+Looking towards the future, the HL-LHC offers benefits to analysis sensitivity
+but also unique challenges that need to be addressed with new analysis methods
+and detector hardware improvements.  On the analysis side, the dense environment
+will certainly only make machine-learned methods like $\mathrm{image_{MD}}$ more
+relevant.  From the hardware side, I am helping to prepare for the HL-LHC
+upgrade through the outer tracker silicon module prototyping.
+Specifically, characterizing the PS-module, which correlates hits from two closely
+spaced silicon layers such that a fast $p_\mathrm{T}$ measurement can be made.  I contributed to
+this effort by characterizing the prototype assembly for the silicon pixel portion
+of the PS-module (MaPSA-light) including writing the first functional DAQ system for
+data taking.  I was also in charge of the testbeam campaign as the spokesperson
+for experiment T-1209, which was performed using the Fermilab Main Injector.
+The data collected during the three testbeams were
+used in various analyses contributing to the Phase-II outer tracker TDR.  I added to
+this effort through the unfolded time efficiency measurement using a convolved
+fit to the timing response spectrum.  My experience contributing to the upgrade
+project has given me a better understanding of the breadth of a full physics analysis,
+from achieving the first readout on an experimental detector to a publishable result.
+My upgrade duties continue, leading toward the full MPA module software integration
+with the full Phase-II outer tracker software framework.  My work characterizing
+the very first prototype MPA modules has been an exciting introduction to HL-LHC
+upgrade hardware, and the experience that I have gained will prove valuable in
+establishing further hardware contributions.
+\normalem
+
+\begin{flushleft}
+\begin{thebibliography}{1}
+
+
+ \bibitem{Chatrchyan:2013lca} \textit{Search for New Physics using the $\mathrm{t\bar{t}}$ Invariant Mass Distribution in pp Collisions at $\sqrt{s}$=8  TeV},\\
+ The CMS Collaboration, \textbf{Phys. Rev. Lett.},{\doi{10.1103/PhysRevLett.111.211804}}, 2013
+
+ \bibitem{Khachatryan:2015edz} \textit{Search for $\mathrm{W' \to tb}$ in proton-proton collisions at $\sqrt{s} = $ 8 TeV},\\
+ The CMS Collaboration, \textbf{JHEP}, \doi{10.1007/JHEP02(2016)122}, 2016
+
+ \bibitem{Sirunyan:2017ukk} \textit{Searches for $\mathrm{W'}$ bosons decaying to a top quark and a bottom quark in proton-proton collisions at 13 TeV}, \\
+  The CMS Collaboration, \textbf{JHEP}, \doi{10.1007/JHEP08(2017)029}, 2017
+
+
+
+ \bibitem{CMS:2014fya}
+ \textit{Boosted Top Jet Tagging at CMS},\\
+ The CMS Collaboration, \textbf{CMS Physics Analysis Summry}, \href{http://cms-physics.web.cern.ch/cms-physics/public/JME-13-007-pas.pdf}{{\color{blue}\underline{CMS PAS JME-13-007}}}, 2014
+
+
+ \bibitem{Khachatryan:2015mta}
+\textit{Search for the production of an excited bottom quark decaying to $\mathrm{tW}$ in proton-proton collisions at $ \sqrt{s}=8 $ TeV},\\
+The CMS Collaboration, \textbf{JHEP}, \doi{10.1007/JHEP01(2016)166}, 2016
+
+
+
+ \bibitem{Sirunyan:2018fki}
+\textit{Search for a $\mathrm{W'}$ boson decaying to a vector-like quark and a top or bottom quark in the all-jets final state},\\
+The CMS Collaboration, \textbf{JHEP}, \doi{10.1007/JHEP03(2019)127}, 2019
+
+ \bibitem{Kasieczka:2017nvn} \textit{Deep-learning Top Taggers or The End of QCD?},\\
+ Kasieczka, Plehn et al, \textbf{JHEP}, \doi{10.1007/JHEP05(2017)006}, 2017
+
+
+ \bibitem{Dobrescu:2015yba} \textit{Heavy Higgs bosons and the 2 TeV $\mathrm{W'}$ boson},\\
+ Dobrescu, Bogdan A. and Liu, Zhen, \textbf{JHEP}, \doi{10.1007/JHEP10(2015)118}, 2015
+
+
+ \bibitem{Macaluso:2018tck} \textit{Pulling Out All the Tops with Computer Vision and Deep Learning},\\
+ Macaluso, Sebastian and Shih, David, \textbf{JHEP}, \doi{10.1007/JHEP10(2018)121}, 2018
+
+
+ \bibitem{CMS:2019gpd} \textit{Identification of heavy, energetic, hadronically decaying particles using machine-learning techniques},\\
+ The CMS Collaboration, \textbf{JINST}, \doi{10.1088/1748-0221/15/06/P06005}, 2020
+
+\end{thebibliography}
+\end{flushleft}
+
+
+%\bibliography{RI2020}
+%\bibliographystyle{IEEEtran}
+\end{document}
